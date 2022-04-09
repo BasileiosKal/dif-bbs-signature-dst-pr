@@ -45,12 +45,12 @@ fn spk_verify(
         t += revealed_msg_generators[i] * revealed_msgs[i];
     }
 
-    let mut hidden_t = G1Projective::identity();
+    let mut hidden_msg_sum = G1Projective::identity();
     for j in 0..hidden_msg_generators.len() {
-        hidden_t += hidden_msg_generators[j] * hidden_msg_hat[j];
+        hidden_msg_sum += hidden_msg_generators[j] * hidden_msg_hat[j];
     }
 
-    let c2_v = (t * c + d * (-r3_hat) + h0 * s_hat + hidden_t).to_affine();
+    let c2_v = (t * c + d * (-r3_hat) + h0 * s_hat + hidden_msg_sum).to_affine();
 
     if c1 != c1_v {return false};
     if c2 != c2_v {return false};
