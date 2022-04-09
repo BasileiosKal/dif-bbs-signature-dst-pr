@@ -1,0 +1,12 @@
+[package]
+name = "bbs_signature_dst_pr"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bls12_381 = "0.6"
+ff = "0.11"
+group = "0.11"
+rand = "0.8"
